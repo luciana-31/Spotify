@@ -5,12 +5,12 @@ import Card from "../../ui/Card/Card";
 
 export default function Aside() {
   return (
-    <aside className="flex flex-col justify-around w-[25%] bg-sp-dark-gray h-[85%] rounded-sm p-1.5 font-bold">
+    <aside className="flex flex-col justify-around w-[25%] bg-sp-dark-gray  rounded-sm p-1.5 font-bold">
       <header className="flex items-center  justify-between text-white text-sm  mx-2.5">
         <h2>Tu Biblioteca</h2>
         <PlusIcon className="h-3" />
       </header>
-      <section className="flex flex-col gap-y-5">
+      <section className="flex flex-col ">
         <Card
           title="Crea tu primera Playlist"
           description="!Es muy fácil! Te vamos a ayudar."
