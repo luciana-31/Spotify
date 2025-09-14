@@ -9,7 +9,7 @@ function App() {
     <div className="h-screen bg-black px-1.5 flex flex-col">
       <Header />
 
-      <div className="flex h-[95%]">
+      <div className="flex h-[95%] gap-x-1.5 ">
         <Aside />
         <Main />
       </div>
