@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sp-black: #121212;
+  --color-sp-dark-gray: #121212;
   --color-sp-gray: #1f1f1f;
   --color-sp-light-gray: #696969;
   --color-sp-light-gray-2: #afafaf;
 
   --text-xxs: 0.625rem;
+  --text-xxxs: 0.5rem;
 }

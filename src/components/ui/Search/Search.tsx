@@ -2,7 +2,7 @@
 import SearchIcon from "../../../assets/svg/SearchIcon/SearchIcon";
 import ExploreIcon from "../../../assets/svg/ExploreIcon/ExploreIcon";
 import clsx from "clsx";
-// import { useState } from "react"
+// import { useState } from "react";
 
 interface SearchProps {
   placeholder: string;
@@ -22,7 +22,7 @@ export default function Search({ placeholder, className }: SearchProps) {
         className?.container
       )}
     >
-      <span className="flex items-center gap-x-2 text-xs  ">
+      <span className="flex flex-1 items-center gap-x-2 text-xs  ">
         <SearchIcon className="h-5 " />
         <input
           type="text"

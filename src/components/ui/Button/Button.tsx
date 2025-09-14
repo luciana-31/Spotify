@@ -10,7 +10,7 @@ export default function Button({ children, className }: ButtonProps) {
   return (
     <button
       className={clsx(
-        "flex items-center cursor-pointer text-black text-xs bg-white rounded-full font-bold",
+        "flex items-center cursor-pointer text-black text-xs  rounded-full font-bold",
         className
       )}
     >

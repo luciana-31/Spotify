@@ -6,10 +6,10 @@ import Search from "../../ui/Search/Search";
 
 export default function Header() {
   return (
-    <header className="bg-black py-1">
+    <header className="bg-black py-1.5">
       <nav className="flex items-center justify-between">
         <div className="flex items-center">
-          <SpotifyIcon className="h-6 w-6 mx-5" />
+          <SpotifyIcon className="h-6  mx-5" />
           <div className="flex items-center gap-x-1.5">
             <span className="flex items-center justify-center p-2 bg-sp-gray rounded-full">
               <HomeIcon className="h-4.5 " />
@@ -37,7 +37,7 @@ export default function Header() {
             </li>
             <li>Regístrate</li>
           </ul>
-          <Button className="py-2.5 p-6">Iniciar sesión</Button>
+          <Button className="py-2.5 p-6 bg-white">Iniciar sesión</Button>
         </div>
       </nav>
     </header>
