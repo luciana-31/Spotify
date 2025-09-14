@@ -17,7 +17,7 @@ export default function Search({ placeholder, className }: SearchProps) {
   return (
     <div
       className={clsx(
-        "flex items-center justify-between py-2 px-3 bg-sp-gray rounded-full",
+        "flex items-center justify-between py-2 px-3 bg-sp-gray rounded-full hover:bg-sp-light-gray-3",
         // isSelected && "border border-white",
         className?.container
       )}
@@ -34,7 +34,7 @@ export default function Search({ placeholder, className }: SearchProps) {
           //   onClick={() => setSelected(true)}
         />
       </span>
-      <ExploreIcon className="h-4.5 pl-2.5 border-l border-sp-light-gray " />
+      <ExploreIcon className="h-4.5 pl-2.5 border-l border-sp-light-gray hover:fill-white " />
     </div>
   );
 }

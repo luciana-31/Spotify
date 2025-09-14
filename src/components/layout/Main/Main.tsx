@@ -9,7 +9,7 @@ import FacebookIcon from "../../../assets/svg/FacebookIcon/FacebookIcon";
 
 export default function Main() {
   return (
-    <main className="bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30% h-[490px] w-[75%] rounded-sm overflow-hidden overflow-y-auto">
+    <main className="bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30% h-[490px] w-[75%] rounded-sm overflow-hidden overflow-y-auto md:w-3/4">
       <MusicDisplay data={Songs} />
       <MusicDisplay data={Singers} type="artist" />
       <MusicDisplay data={Songs} />
@@ -17,8 +17,8 @@ export default function Main() {
 
       <span className="block  border-t border-sp-gray-2 my-12 mx-5" />
 
-      <footer className="flex flex-col ">
-        <div className="flex items-start gap-x-14 ">
+      <footer className="flex flex-col px-6">
+        <div className="flex items-start justify-between">
           <LinkList
             title="Compañia "
             links={["Acerca De", "Empleo", "For The Record"]}
@@ -64,8 +64,8 @@ export default function Main() {
             </span>
           </div>
         </div>
-        <span className="block  border-t border-sp-gray-2 mt-9 mx-5" />
-        <span className="text-xs text-sp-light-gray m-5 ">
+        <span className="block  border-t border-sp-gray-2 mt-9 " />
+        <span className="text-xs text-sp-light-gray my-5 ">
           © 20025 Spotify AB
         </span>
       </footer>

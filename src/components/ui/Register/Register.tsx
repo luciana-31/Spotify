@@ -10,7 +10,9 @@ export default function Register() {
           anuncios. No necesitaras tarjeta de credito.
         </p>
       </span>
-      <Button className="bg-white px-6 py-2.5">Registrate Gratis</Button>
+      <Button className="bg-white px-6 py-2.5 hover:bg-sp-white">
+        Registrate Gratis
+      </Button>
     </div>
   );
 }

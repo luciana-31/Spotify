@@ -6,9 +6,13 @@
   --color-sp-gray-2: #212121;
   --color-sp-light-gray: #696969;
   --color-sp-light-gray-2: #afafaf;
+  --color-sp-light-gray-3: #2a2a2a;
+  --color-sp-white: #f0f0f0;
+
   --color-sp-pink: #a6329e;
   --color-sp-blue: #5498f0;
   --color-sp-purple: #7b66c9;
+  --color-sp-green: #1dd162;
 
   --text-xxs: 0.625rem;
   --text-xxxs: 0.5rem;

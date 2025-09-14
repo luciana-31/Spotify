@@ -12,7 +12,7 @@ export default function SpotifyIcon({ className }: SpotifyIconProps) {
       viewBox="0 0 24 24"
       aria-label="Spotify"
       aria-hidden="false"
-      className={clsx("fill-white", className)}
+      className={clsx("fill-white cursor-pointer", className)}
       data-encore-id="logoSpotify"
     >
       <title>Spotify</title>

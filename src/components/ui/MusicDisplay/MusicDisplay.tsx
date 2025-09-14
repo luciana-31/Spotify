@@ -13,7 +13,9 @@ export default function MusicDisplay({ data, type }: MusicDisplayProps) {
   return (
     <div className="flex flex-col gap-y-3 py-4.5">
       <span className="flex items-center justify-between text-white font-bold px-6">
-        <h2>Canciones del Momento</h2>
+        <h2 className="hover:underline cursor-pointer">
+          Canciones del Momento
+        </h2>
         <p className="hover:underline cursor-pointer text-sp-light-gray-2 text-xxs">
           Mostrar Todo
         </p>

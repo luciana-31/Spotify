@@ -5,7 +5,7 @@ interface LinkListProps {
 
 export default function LinkList({ title, links }: LinkListProps) {
   return (
-    <div className="flex flex-col gap-y-1 text-xs px-6">
+    <div className="flex flex-col gap-y-1 text-xs ">
       <span className="text-white font-semibold">{title}</span>
 
       <ul className="flex flex-col gap-y-2">

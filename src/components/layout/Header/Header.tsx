@@ -10,8 +10,8 @@ export default function Header() {
       <nav className="flex items-center justify-between">
         <div className="flex items-center">
           <SpotifyIcon className="h-6  mx-5" />
-          <div className="flex items-center gap-x-1.5">
-            <span className="flex items-center justify-center p-2 bg-sp-gray rounded-full">
+          <div className="flex items-center gap-x-1.5 cursor-pointer ">
+            <span className="flex items-center justify-center p-2 bg-sp-gray rounded-full hover:bg-sp-light-gray-3">
               <HomeIcon className="h-4.5 " />
             </span>
             <Search
@@ -23,21 +23,23 @@ export default function Header() {
 
         <div className="flex items-center gap-x-4">
           <ul className=" flex items-center gap-x-2 text-sp-light-gray-2 text-xs font-bold">
-            <li className="hover:text-white hover:font-extrabold">Premium</li>
-            <li>Ayuda</li>
-            <li>Descargar</li>
+            <li className="hover:text-white cursor-pointer ">Premium</li>
+            <li className="hover:text-white cursor-pointer  ">Ayuda</li>
+            <li className="hover:text-white  cursor-pointer ">Descargar</li>
           </ul>
           <span className="border-l border-white rounded-full h-4.5" />
           <ul className=" flex items-center gap-x-5 text-sp-light-gray-2 text-xxs font-bold">
             <li>
-              <span className="flex items-center gap-x-1.5">
-                <DownloadIcon className="h-3" />
+              <span className="flex items-center gap-x-1.5 hover:text-white  cursor-pointer">
+                <DownloadIcon className="h-3 " />
                 Instalar aplicación
               </span>
             </li>
-            <li>Regístrate</li>
+            <li className="hover:text-white  cursor-pointer ">Regístrate</li>
           </ul>
-          <Button className="py-2.5 p-6 bg-white">Iniciar sesión</Button>
+          <Button className="py-2.5 p-6 bg-white hover:bg-sp-white">
+            Iniciar sesión
+          </Button>
         </div>
       </nav>
     </header>
