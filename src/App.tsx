@@ -3,8 +3,6 @@ import Aside from "./components/layout/Aside/Aside";
 import Header from "./components/layout/Header/Header";
 import Main from "./components/layout/Main/Main";
 import Register from "./components/ui/Register/Register";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

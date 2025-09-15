@@ -34,7 +34,7 @@ export default function Search({ placeholder, className }: SearchProps) {
           //   onClick={() => setSelected(true)}
         />
       </span>
-      <ExploreIcon className="h-4.5 sm:h-2 pl-2.5 border-l border-sp-light-gray hover:fill-white " />
+      <ExploreIcon className="h-4.5 pl-2.5 border-l border-sp-light-gray hover:fill-white " />
     </div>
   );
 }
