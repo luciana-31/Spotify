@@ -6,7 +6,7 @@ import LinkList from "../../ui/LinkList/LinkList";
 
 export default function Aside() {
   return (
-    <aside className="flex flex-col  justify-between w-[22%]   bg-sp-dark-gray rounded-sm p-1.5 font-bold border-box flex-none ">
+    <aside className="relative  flex flex-col justify-between md:w-[25%] w-[20%] bg-sp-dark-gray rounded-sm p-1.5 font-bold border-box flex-none ">
       <section className="flex flex-col gap-y-5">
         <header className="flex items-center  justify-between text-white text-sm mx-3 my-2">
           <h2>Tu Biblioteca</h2>
@@ -14,7 +14,7 @@ export default function Aside() {
             <PlusIcon className="h-3" />
           </span>
         </header>
-        <div className="flex flex-col ">
+        <div className="flex flex-col  min-h-[150px] overflow-y-auto md:overflow-hidden md:h-full">
           <Card
             title="Crea tu primera Playlist"
             description="!Es muy fácil! Te vamos a ayudar."
@@ -45,7 +45,7 @@ export default function Aside() {
             Cookies
           </span>
         </div>
-        <Button className=" border-box px-2.5 py-1 gap-x-2 border border-sp-light-gray-2 text-white w-fit text-xs">
+        <Button className=" border-box px-2.5 py-1 gap-x-2 border border-sp-light-gray-2 text-white w-fit ">
           <LanguageIcon className="h-3" />
           Español de Latinoamerica
         </Button>

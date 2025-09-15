@@ -1,25 +1,29 @@
 import MusicDisplay from "../../ui/MusicDisplay/MusicDisplay";
 
 import { Songs } from "../../../const/Songs";
-import { Singers } from "../../../const/Singers";
 import LinkList from "../../ui/LinkList/LinkList";
 import InstagramIcon from "../../../assets/svg/InstagramIcon/InstagramIcon";
 import TwitterIcon from "../../../assets/svg/TwitterIcon/TwitterIcon";
 import FacebookIcon from "../../../assets/svg/FacebookIcon/FacebookIcon";
 import IconWrapper from "../../ui/IconWrapper/IconWrapper";
+import { Singers } from "../../../const/Singers";
+import { Listas } from "../../../const/Listas";
+import { Estaciones } from "../../../const/Estaciones";
 
 export default function Main() {
   return (
-    <main className="flex-1 w-full bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto ">
-      <MusicDisplay data={Songs} />
-      <MusicDisplay data={Singers} type="artist" />
-      <MusicDisplay data={Songs} />
-      {/* <MusicDisplay data={Songs} /> */}
+    <main className="flex-1 w-full bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto overflow-x-hidden pt-6 ">
+      <section className="flex flex-col gap-y-2">
+        <MusicDisplay data={Songs} title="Canciones del Momento" />
+        <MusicDisplay data={Singers} type="artist" title="Artistas Populares" />
+        <MusicDisplay data={Estaciones} title="Estaciones populares" />
+        <MusicDisplay data={Listas} title="Listas Destacadas" />
+      </section>
 
       <span className="block  border-t border-sp-gray-2 my-12 mx-5" />
 
       <footer className="flex flex-col px-6">
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col gap-y-8 items-start justify-between sm:flex-row">
           <LinkList
             title="Compañia "
             links={["Acerca De", "Empleo", "For The Record"]}

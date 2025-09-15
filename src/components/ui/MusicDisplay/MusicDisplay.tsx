@@ -1,67 +1,103 @@
 "use client";
-import MusicItem from "../MusicItem/MusicItem";
+
+import { useState } from "react";
+import type { ItemType } from "../../../interface/ItemType";
 import ArrowLeftIcon from "../../../assets/svg/ArrowLeftIcon/ArrowLeftIcon";
 import ArrowRightIco from "../../../assets/svg/ArrowRightIcon/ArrowRightIco";
-import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import type { ItemType } from "../../../interface/ItemType";
+import MusicItem from "../MusicItem/MusicItem";
+import { motion } from "framer-motion";
 
-interface MusicDisplayProps {
+interface MusicCarouselProps {
   data: ItemType[];
   type?: string;
+  title: string;
 }
 
-export default function MusicDisplay({ data, type }: MusicDisplayProps) {
+export default function MusicCarousel({
+  data,
+  type,
+  title,
+}: MusicCarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
+  const slidesToShow = 6;
+  const slidesToScroll = 3;
+
+  const itemWidth = 160;
+  const gap = 16;
+  const translateX = -(currentIndex * (itemWidth + gap));
+
+  const next = () => {
+    if (currentIndex + slidesToShow < data.length) {
+      setCurrentIndex(
+        Math.min(currentIndex + slidesToScroll, data.length - slidesToShow)
+      );
+    }
+  };
+
+  const prev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(Math.max(currentIndex - slidesToScroll, 0));
+    }
+  };
+
   return (
-    <div className="flex flex-col gap-y-3 py-4.5">
-      <span className="flex items-center justify-between text-white font-bold px-6">
-        <h2 className="hover:underline cursor-pointer">
-          Canciones del Momento
-        </h2>
-        <p className="hover:underline cursor-pointer text-sp-light-gray-2 text-xxs">
-          Mostrar Todo
-        </p>
-      </span>
-      <div
-        className="flex items-start gap-x-3 overflow-hidden pl-6 relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+    <div
+      className="relative overflow-hidden px-4"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <h2 className="text-white font-bold mb-2">{title}</h2>
+
+      <motion.span
+        onClick={prev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-sp-dark-gray p-1 rounded-full z-10 cursor-pointer"
+        animate={{
+          x: isHovered ? 0 : -20,
+          opacity: currentIndex > 0 && isHovered ? 1 : 0,
+        }}
+        transition={{ duration: 0.2 }}
+        style={{ pointerEvents: currentIndex > 0 ? "auto" : "none" }}
       >
-        {data.map((data) => (
-          <MusicItem
-            key={data.id}
-            title={data.title}
-            description={data.description}
-            explicit={data.explicit}
-            type={type}
-          />
+        <ArrowLeftIcon className="h-3 fill-white" />
+      </motion.span>
+
+      <motion.span
+        onClick={next}
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-sp-dark-gray p-1 rounded-full z-10 cursor-pointer"
+        animate={{
+          x: isHovered ? 0 : 20,
+          opacity:
+            currentIndex + slidesToShow < data.length && isHovered ? 1 : 0,
+        }}
+        transition={{ duration: 0.2 }}
+        style={{
+          pointerEvents:
+            currentIndex + slidesToShow < data.length ? "auto" : "none",
+        }}
+      >
+        <ArrowRightIco className="h-3 fill-white" />
+      </motion.span>
+
+      <div
+        className="flex transition-transform duration-500"
+        style={{ transform: `translateX(${translateX}px)` }}
+      >
+        {data.map((item) => (
+          <div
+            key={item.id}
+            className="flex-shrink-0 w-40 sm:w-32 xs:w-56 mr-4"
+          >
+            <MusicItem
+              title={item.title}
+              description={item.description}
+              explicit={item.explicit}
+              src={item.src}
+              type={type}
+            />
+          </div>
         ))}
-        <AnimatePresence>
-          {isHovered && (
-            <>
-              <motion.span
-                className="absolute top-20 flex items-center justify-center bg-sp-dark-gray p-1 h-fit rounded-full"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ArrowLeftIcon className="h-3" />
-              </motion.span>
-              <motion.span
-                className="absolute top-20 right-4 flex items-center justify-center bg-sp-dark-gray p-1 h-fit rounded-full"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ x: 20, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <ArrowRightIco className="h-3" />
-              </motion.span>
-            </>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );

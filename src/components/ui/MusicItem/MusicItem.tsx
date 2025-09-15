@@ -1,12 +1,11 @@
-"use client";
-
 import { useState } from "react";
 import PlayIcon from "../../../assets/svg/PlayIcon/PlayIcon";
 import { AnimatePresence, motion } from "motion/react";
 
 interface MusicItemProps {
   title?: string;
-  description?: string;
+  description: string;
+  src: string;
   type?: string;
   explicit?: boolean;
 }
@@ -14,6 +13,7 @@ interface MusicItemProps {
 export default function MusicItem({
   title,
   description,
+  src,
   type,
   explicit,
 }: MusicItemProps) {
@@ -21,25 +21,30 @@ export default function MusicItem({
   return (
     <div
       className={
-        "relative flex flex-col gap-y-1 text-sp-light-gray-2 text-xs hover:bg-gradient-to-b hover:from-transparent hover:to-sp-gray  rounded-sm p-2.5"
+        "relative flex flex-col gap-y-1 cursor-pointer text-sp-light-gray-2 text-xs hover:bg-gradient-to-b hover:from-transparent hover:to-sp-gray rounded-sm p-2.5 mx-1 w-fit"
       }
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={` bg-amber-300 h-[120px] w-[120px]  ${
+        className={`relative overflow-hidden ${
           type === "artist" ? "rounded-full" : "rounded-sm"
-        }`}
-      />
+        } h-[120px] w-[120px]`}
+      >
+        <img src={src} alt={title} className="h-full w-full object-cover" />
+      </div>
+
       <h3 className="text-white hover:underline cursor-pointer">{title}</h3>
-      <p className="flex items-center gap-x-2">
+      <span className="flex items-center gap-x-2 ">
         {explicit && (
           <span className="bg-sp-light-gray-2 px-1 rounded-xs text-xxs text-sp-dark-gray">
             E
           </span>
         )}
-        <p className="hover:underline cursor-pointer">{description}</p>
-      </p>
+        <p className="hover:underline cursor-pointer text-wrap">
+          {description}
+        </p>
+      </span>
       <AnimatePresence>
         {isHovered && (
           <motion.span

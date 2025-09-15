@@ -1,6 +1,7 @@
 export interface ItemType {
   id: number;
-  title: string;
+  title?: string;
   description: string;
+  src: string;
   explicit?: boolean;
 }

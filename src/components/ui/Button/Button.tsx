@@ -12,7 +12,7 @@ export default function Button({ children, className }: ButtonProps) {
     <AnimatePresence>
       <motion.button
         className={clsx(
-          "flex items-center cursor-pointer text-black text-xs  rounded-full font-bold",
+          "flex items-center cursor-pointer text-black  text-nowrap   rounded-full font-bold md:text-xs text-xxs",
           className
         )}
         whileHover={{ scale: 1.03 }}
