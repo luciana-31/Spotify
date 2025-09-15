@@ -13,10 +13,12 @@ import { Estaciones } from "../../../const/Estaciones";
 export default function Main() {
   return (
     <main className="flex-1 w-full bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto overflow-x-hidden pt-6 ">
-      <section className="flex flex-col gap-y-2">
+      <section className="flex flex-col gap-y-10">
         <MusicDisplay data={Songs} title="Canciones del Momento" />
         <MusicDisplay data={Singers} type="artist" title="Artistas Populares" />
-        <MusicDisplay data={Estaciones} title="Estaciones populares" />
+        <MusicDisplay data={Songs} title="Canciones del Momento" />
+
+        <MusicDisplay data={Estaciones} title="Albumes y Sencillos populares" />
         <MusicDisplay data={Listas} title="Listas Destacadas" />
       </section>
 

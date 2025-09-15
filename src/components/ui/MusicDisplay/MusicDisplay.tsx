@@ -48,7 +48,7 @@ export default function MusicCarousel({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h2 className="text-white font-bold mb-2">{title}</h2>
+      <h2 className="text-white font-bold mb-2 text-xl pl-3">{title}</h2>
 
       <motion.span
         onClick={prev}
