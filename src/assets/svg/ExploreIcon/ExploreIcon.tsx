@@ -11,7 +11,7 @@ export default function ExploreIcon({ className }: ExploreIconProps) {
       data-encore-id="icon"
       role="img"
       aria-hidden="true"
-      className={clsx("fill-sp-light-gray-2", className)}
+      className={clsx("fill-sp-light-gray-2 cursor-pointer", className)}
       viewBox="0 0 24 24"
     >
       <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2"></path>

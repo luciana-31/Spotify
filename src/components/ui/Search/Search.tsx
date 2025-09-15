@@ -22,19 +22,19 @@ export default function Search({ placeholder, className }: SearchProps) {
         className?.container
       )}
     >
-      <span className="flex flex-1 items-center gap-x-2 text-xs  ">
+      <span className="flex flex-1 items-center gap-x-2 text-xs text-sp-light-gray-2 sm:text-xxs ">
         <SearchIcon className="h-5 " />
         <input
           type="text"
           placeholder={placeholder}
           className={clsx(
-            "w-full outline-0 placeholder:text-sp-light-gray-2 caret-sp-light-gray-2",
+            "w-full outline-0 placeholder:text-sp-light-gray-2 caret-sp-light-gray-2 ",
             className?.input
           )}
           //   onClick={() => setSelected(true)}
         />
       </span>
-      <ExploreIcon className="h-4.5 pl-2.5 border-l border-sp-light-gray hover:fill-white " />
+      <ExploreIcon className="h-4.5 sm:h-2 pl-2.5 border-l border-sp-light-gray hover:fill-white " />
     </div>
   );
 }

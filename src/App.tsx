@@ -3,13 +3,14 @@ import Aside from "./components/layout/Aside/Aside";
 import Header from "./components/layout/Header/Header";
 import Main from "./components/layout/Main/Main";
 import Register from "./components/ui/Register/Register";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
-    <div className="h-screen bg-black px-1.5 flex flex-col box-border">
+    <div className="h-screen w-fit md:w-full  bg-black px-1.5 flex flex-col box-border">
       <Header />
-
-      <div className="flex flex-1 gap-x-1.5 overflow-hidden">
+      <div className="flex flex-1 gap-x-1.5 w-full overflow-hidden">
         <Aside />
         <Main />
       </div>

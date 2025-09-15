@@ -43,7 +43,7 @@ export default function MusicItem({
       <AnimatePresence>
         {isHovered && (
           <motion.span
-            className="absolute bottom-14 left-23 flex items-center bg-sp-green p-3  w-fit rounded-full"
+            className="absolute top-22 left-23 flex items-center bg-sp-green p-3  w-fit rounded-full"
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 10, opacity: 0 }}

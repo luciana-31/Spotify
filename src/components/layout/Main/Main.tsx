@@ -10,10 +10,10 @@ import IconWrapper from "../../ui/IconWrapper/IconWrapper";
 
 export default function Main() {
   return (
-    <main className="flex-1 bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto ">
+    <main className="flex-1 w-full bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto ">
       <MusicDisplay data={Songs} />
       <MusicDisplay data={Singers} type="artist" />
-      {/* <MusicDisplay data={Songs} /> */}
+      <MusicDisplay data={Songs} />
       {/* <MusicDisplay data={Songs} /> */}
 
       <span className="block  border-t border-sp-gray-2 my-12 mx-5" />

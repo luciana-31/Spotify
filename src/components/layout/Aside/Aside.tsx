@@ -6,7 +6,7 @@ import LinkList from "../../ui/LinkList/LinkList";
 
 export default function Aside() {
   return (
-    <aside className="flex flex-col justify-between w-[22%] bg-sp-dark-gray rounded-sm p-1.5 font-bold border-box">
+    <aside className="flex flex-col  justify-between w-[22%]   bg-sp-dark-gray rounded-sm p-1.5 font-bold border-box flex-none ">
       <section className="flex flex-col gap-y-5">
         <header className="flex items-center  justify-between text-white text-sm mx-3 my-2">
           <h2>Tu Biblioteca</h2>

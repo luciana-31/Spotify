@@ -9,19 +9,15 @@ import Search from "../../ui/Search/Search";
 export default function Header() {
   return (
     <header className="bg-black py-1.5">
-      <nav className="flex items-center justify-between">
-        <div className="flex items-center">
-          <SpotifyIcon className="h-6  mx-5" />
-          <div className="flex items-center gap-x-1.5 cursor-pointer ">
-            <IconWrapper icon={<HomeIcon className="h-4.5 " />} />
-
-            <Search
-              placeholder="¿Qué Quieres Reproducir?"
-              className={{ container: "w-[350px]" }}
-            />
-          </div>
-        </div>
-
+      <nav className="flex items-center justify-between ">
+        <SpotifyIcon className="h-6  mx-5" />
+        <span className="flex items-center gap-x-1.5 justify-center">
+          <IconWrapper icon={<HomeIcon className="h-4.5 " />} />
+          <Search
+            placeholder="¿Qué Quieres Reproducir?"
+            className={{ container: "w-[350px]" }}
+          />
+        </span>
         <div className="flex items-center gap-x-4">
           <Menu data={["Premium", "Ayuda", "Descargar"]} />
           <span className="border-l border-white rounded-full h-4.5" />

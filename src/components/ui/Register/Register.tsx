@@ -2,7 +2,7 @@ import Button from "../../ui/Button/Button";
 
 export default function Register() {
   return (
-    <div className="h-[8%] flex items-center justify-between cursor-pointer p-2 bg-gradient-to-r from-sp-pink via-sp-purple to-sp-blue my-1.5 px-3 ">
+    <div className="h-[8%] flex items-center justify-between cursor-pointer p-2 bg-gradient-to-r from-sp-pink via-sp-purple to-sp-blue my-1.5 px-3 w-full ">
       <span className="text-white text-xs ">
         <h4 className="font-bold">Muestra de Spotify</h4>
         <p>

@@ -2,9 +2,9 @@
 import MusicItem from "../MusicItem/MusicItem";
 import ArrowLeftIcon from "../../../assets/svg/ArrowLeftIcon/ArrowLeftIcon";
 import ArrowRightIco from "../../../assets/svg/ArrowRightIcon/ArrowRightIco";
-import type { ItemType } from "../../../interface/ItemType";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import type { ItemType } from "../../../interface/ItemType";
 
 interface MusicDisplayProps {
   data: ItemType[];
@@ -13,6 +13,7 @@ interface MusicDisplayProps {
 
 export default function MusicDisplay({ data, type }: MusicDisplayProps) {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="flex flex-col gap-y-3 py-4.5">
       <span className="flex items-center justify-between text-white font-bold px-6">

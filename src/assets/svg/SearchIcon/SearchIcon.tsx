@@ -11,7 +11,7 @@ export default function SearchIcon({ className }: SearchIconprops) {
       data-encore-id="icon"
       role="img"
       aria-hidden="true"
-      className={clsx("fill-sp-light-gray-2", className)}
+      className={clsx("fill-current cursor-pointer", className)}
       data-testid="search-icon"
       viewBox="0 0 24 24"
     >
