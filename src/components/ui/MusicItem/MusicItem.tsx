@@ -29,7 +29,7 @@ export default function MusicItem({
       <div
         className={`relative overflow-hidden ${
           type === "artist" ? "rounded-full" : "rounded-sm"
-        } h-[120px] w-[120px]`}
+        } h-[130px] w-[130px]`}
       >
         <img src={src} alt={title} className="h-full w-full object-cover" />
       </div>
