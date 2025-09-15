@@ -2,6 +2,8 @@ import DownloadIcon from "../../../assets/svg/DownloadIcon/DownloadIcon";
 import HomeIcon from "../../../assets/svg/HomeIcon/HomeIcon";
 import SpotifyIcon from "../../../assets/svg/SpotifyIcon/SpotifyIcon";
 import Button from "../../ui/Button/Button";
+import IconWrapper from "../../ui/IconWrapper/IconWrapper";
+import Menu from "../../ui/Menu/Menu";
 import Search from "../../ui/Search/Search";
 
 export default function Header() {
@@ -11,22 +13,17 @@ export default function Header() {
         <div className="flex items-center">
           <SpotifyIcon className="h-6  mx-5" />
           <div className="flex items-center gap-x-1.5 cursor-pointer ">
-            <span className="flex items-center justify-center p-2 bg-sp-gray rounded-full hover:bg-sp-light-gray-3">
-              <HomeIcon className="h-4.5 " />
-            </span>
+            <IconWrapper icon={<HomeIcon className="h-4.5 " />} />
+
             <Search
               placeholder="¿Qué Quieres Reproducir?"
-              className={{ container: "w-90" }}
+              className={{ container: "w-[350px]" }}
             />
           </div>
         </div>
 
         <div className="flex items-center gap-x-4">
-          <ul className=" flex items-center gap-x-2 text-sp-light-gray-2 text-xs font-bold">
-            <li className="hover:text-white cursor-pointer ">Premium</li>
-            <li className="hover:text-white cursor-pointer  ">Ayuda</li>
-            <li className="hover:text-white  cursor-pointer ">Descargar</li>
-          </ul>
+          <Menu data={["Premium", "Ayuda", "Descargar"]} />
           <span className="border-l border-white rounded-full h-4.5" />
           <ul className=" flex items-center gap-x-5 text-sp-light-gray-2 text-xxs font-bold">
             <li>
@@ -37,7 +34,7 @@ export default function Header() {
             </li>
             <li className="hover:text-white  cursor-pointer ">Regístrate</li>
           </ul>
-          <Button className="py-2.5 p-6 bg-white hover:bg-sp-white">
+          <Button className="py-2.5 px-6 bg-white hover:bg-sp-white">
             Iniciar sesión
           </Button>
         </div>

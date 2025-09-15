@@ -2,17 +2,20 @@
 
 import { useState } from "react";
 import PlayIcon from "../../../assets/svg/PlayIcon/PlayIcon";
+import { AnimatePresence, motion } from "motion/react";
 
 interface MusicItemProps {
   title?: string;
   description?: string;
   type?: string;
+  explicit?: boolean;
 }
 
 export default function MusicItem({
   title,
   description,
   type,
+  explicit,
 }: MusicItemProps) {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -29,13 +32,27 @@ export default function MusicItem({
         }`}
       />
       <h3 className="text-white hover:underline cursor-pointer">{title}</h3>
-      <p className="hover:underline cursor-pointer">{description}</p>
-
-      {isHovered && (
-        <span className="absolute bottom-14 left-23 flex items-center bg-sp-green p-3  w-fit rounded-full">
-          <PlayIcon className="h-3" />
-        </span>
-      )}
+      <p className="flex items-center gap-x-2">
+        {explicit && (
+          <span className="bg-sp-light-gray-2 px-1 rounded-xs text-xxs text-sp-dark-gray">
+            E
+          </span>
+        )}
+        <p className="hover:underline cursor-pointer">{description}</p>
+      </p>
+      <AnimatePresence>
+        {isHovered && (
+          <motion.span
+            className="absolute bottom-14 left-23 flex items-center bg-sp-green p-3  w-fit rounded-full"
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 10, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <PlayIcon className="h-3" />
+          </motion.span>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

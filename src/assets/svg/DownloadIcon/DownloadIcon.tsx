@@ -11,7 +11,7 @@ export default function DownloadIcon({ className }: DowloadIconProps) {
       data-encore-id="icon"
       role="img"
       aria-hidden="true"
-      className={clsx("fill-sp-light-gray-2", className)}
+      className={clsx("fill-current", className)}
       viewBox="0 0 16 16"
     >
       <path d="M4.995 8.745a.75.75 0 0 1 1.06 0L7.25 9.939V4a.75.75 0 0 1 1.5 0v5.94l1.195-1.195a.75.75 0 1 1 1.06 1.06L8 12.811l-.528-.528-.005-.005-2.472-2.473a.75.75 0 0 1 0-1.06"></path>

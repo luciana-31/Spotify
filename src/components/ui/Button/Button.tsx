@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { AnimatePresence, motion } from "motion/react";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,13 +9,16 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function Button({ children, className }: ButtonProps) {
   return (
-    <button
-      className={clsx(
-        "flex items-center cursor-pointer text-black text-xs  rounded-full font-bold",
-        className
-      )}
-    >
-      {children}
-    </button>
+    <AnimatePresence>
+      <motion.button
+        className={clsx(
+          "flex items-center cursor-pointer text-black text-xs  rounded-full font-bold",
+          className
+        )}
+        whileHover={{ scale: 1.03 }}
+      >
+        {children}
+      </motion.button>
+    </AnimatePresence>
   );
 }

@@ -6,14 +6,15 @@ import LinkList from "../../ui/LinkList/LinkList";
 import InstagramIcon from "../../../assets/svg/InstagramIcon/InstagramIcon";
 import TwitterIcon from "../../../assets/svg/TwitterIcon/TwitterIcon";
 import FacebookIcon from "../../../assets/svg/FacebookIcon/FacebookIcon";
+import IconWrapper from "../../ui/IconWrapper/IconWrapper";
 
 export default function Main() {
   return (
-    <main className="bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30% h-[490px] w-[75%] rounded-sm overflow-hidden overflow-y-auto md:w-3/4">
+    <main className="flex-1 bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto ">
       <MusicDisplay data={Songs} />
       <MusicDisplay data={Singers} type="artist" />
-      <MusicDisplay data={Songs} />
-      <MusicDisplay data={Songs} />
+      {/* <MusicDisplay data={Songs} /> */}
+      {/* <MusicDisplay data={Songs} /> */}
 
       <span className="block  border-t border-sp-gray-2 my-12 mx-5" />
 
@@ -22,6 +23,7 @@ export default function Main() {
           <LinkList
             title="Compañia "
             links={["Acerca De", "Empleo", "For The Record"]}
+            type="footer"
           />
           <LinkList
             title="Comunidades"
@@ -32,36 +34,33 @@ export default function Main() {
               "Inversionistas",
               "Proveedores",
             ]}
+            type="footer"
           />
           <LinkList
             title="Enlaces Utiles"
             links={[
               "Ayuda",
-              "App oviles gratis",
+              "App moviles gratis",
               "Contenido popular por país",
               "Import your music ",
             ]}
+            type="footer"
           />
           <LinkList
             title="Planes Spotify"
             links={[
               "Premium individual",
-              "Premiiun duo",
+              "Premium duo",
               "Premium familiar",
               "premium para estudiantes",
               "Version gratuita",
             ]}
+            type="footer"
           />
           <div className="flex items-center gap-x-3">
-            <span className="flex items-center bg-sp-gray p-2 rounded-full">
-              <InstagramIcon className="h-3" />
-            </span>
-            <span className="flex items-center bg-sp-gray p-2 rounded-full">
-              <TwitterIcon className="h-3" />
-            </span>
-            <span className="flex items-center bg-sp-gray p-2 rounded-full">
-              <FacebookIcon className="h-3" />
-            </span>
+            <IconWrapper icon={<InstagramIcon className="h-3 " />} />
+            <IconWrapper icon={<TwitterIcon className="h-3 " />} />
+            <IconWrapper icon={<FacebookIcon className="h-3 " />} />
           </div>
         </div>
         <span className="block  border-t border-sp-gray-2 mt-9 " />

@@ -6,10 +6,10 @@ import Register from "./components/ui/Register/Register";
 
 function App() {
   return (
-    <div className="h-screen bg-black px-1.5 flex flex-col">
+    <div className="h-screen bg-black px-1.5 flex flex-col box-border">
       <Header />
 
-      <div className="flex h-[95%] gap-x-1.5 ">
+      <div className="flex flex-1 gap-x-1.5 overflow-hidden">
         <Aside />
         <Main />
       </div>
