@@ -6,28 +6,30 @@ import LinkList from "../../ui/LinkList/LinkList";
 
 export default function Aside() {
   return (
-    <aside className="relative  flex flex-col justify-between md:w-[25%] w-[20%] bg-sp-dark-gray rounded-sm p-1.5 font-bold border-box flex-none ">
-      <section className="flex flex-col gap-y-5">
-        <header className="flex items-center  justify-between text-white text-sm mx-3 my-2">
-          <h2>Tu Biblioteca</h2>
-          <span className="flex items-center p-1.5 text-sp-light-gray-2   hover:bg-sp-light-gray-3 rounded-full cursor-pointer transition-all ease-in">
+    <aside className="flex flex-col justify-between md:w-[25%] w-[10%] bg-sp-dark-gray rounded-sm p-1.5 font-bold flex-none h-full ">
+      <section className="flex flex-col gap-y-5 flex-1 overflow-hidden">
+        <header className="flex items-center justify-between text-white  mx-3 my-2">
+          <h2 className="text-xxs md:text-sm">Tu Biblioteca</h2>
+          <span className="flex items-center p-1.5 text-sp-light-gray-2 hover:bg-sp-light-gray-3 rounded-full cursor-pointer transition-all ease-in">
             <PlusIcon className="h-3" />
           </span>
         </header>
-        <div className="flex flex-col  min-h-[150px] overflow-y-auto md:overflow-hidden md:h-full">
+
+        <div className="flex flex-col gap-y-2 overflow-hidden hover:overflow-y-auto px-3">
           <Card
             title="Crea tu primera Playlist"
-            description="!Es muy fácil! Te vamos a ayudar."
+            description="¡Es muy fácil! Te vamos a ayudar."
             button="Crear Playlist"
           />
           <Card
             title="Busquemos algunos podcasts para seguir"
-            description="Te mantendremos al tanto de los nuevo espisodios"
+            description="Te mantenemos al tanto de los nuevos episodios"
             button="Explorar podcasts"
           />
         </div>
       </section>
-      <footer className="flex flex-col gap-y-5 font-light px-4 mb-4">
+
+      <footer className="flex flex-col gap-y-5 font-light px-4 mt-4 flex-shrink-0">
         <div className="flex flex-col gap-y-2">
           <LinkList
             links={[
@@ -40,14 +42,13 @@ export default function Aside() {
             ]}
             type="aside"
           />
-
           <span className="text-white text-xxs hover:underline w-fit cursor-pointer">
             Cookies
           </span>
         </div>
-        <Button className=" border-box px-2.5 py-1 gap-x-2 border border-sp-light-gray-2 text-white w-fit ">
+        <Button className="px-2.5 py-1 gap-x-2 border border-sp-light-gray-2 text-white w-fit">
           <LanguageIcon className="h-3" />
-          Español de Latinoamerica
+          <span className="text-xxs lg:text-xs">Español de Latinoamerica</span>
         </Button>
       </footer>
     </aside>

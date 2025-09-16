@@ -12,12 +12,11 @@ import { Estaciones } from "../../../const/Estaciones";
 
 export default function Main() {
   return (
-    <main className="flex-1 w-full bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto overflow-x-hidden pt-6 ">
-      <section className="flex flex-col gap-y-10">
+    <main className="flex-1 bg-gradient-to-b from-sp-gray-2 to-sp-dark-gray to-30%  rounded-sm overflow-y-auto overflow-x-hidden pt-6 sm:w-max-[80%]">
+      <section className="flex flex-col gap-y-10 w-max-200px">
         <MusicDisplay data={Songs} title="Canciones del Momento" />
         <MusicDisplay data={Singers} type="artist" title="Artistas Populares" />
         <MusicDisplay data={Songs} title="Canciones del Momento" />
-
         <MusicDisplay data={Estaciones} title="Albumes y Sencillos populares" />
         <MusicDisplay data={Listas} title="Listas Destacadas" />
       </section>
@@ -64,9 +63,9 @@ export default function Main() {
             type="footer"
           />
           <div className="flex items-center gap-x-3">
-            <IconWrapper icon={<InstagramIcon className="h-3 " />} />
-            <IconWrapper icon={<TwitterIcon className="h-3 " />} />
-            <IconWrapper icon={<FacebookIcon className="h-3 " />} />
+            <IconWrapper icon={<InstagramIcon className="h-4 " />} />
+            <IconWrapper icon={<TwitterIcon className="h-4" />} />
+            <IconWrapper icon={<FacebookIcon className="h-4 " />} />
           </div>
         </div>
         <span className="block  border-t border-sp-gray-2 mt-9 " />

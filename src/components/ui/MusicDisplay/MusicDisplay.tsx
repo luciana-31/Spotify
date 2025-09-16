@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import type { ItemType } from "../../../interface/ItemType";
 import ArrowLeftIcon from "../../../assets/svg/ArrowLeftIcon/ArrowLeftIcon";
@@ -7,17 +5,13 @@ import ArrowRightIco from "../../../assets/svg/ArrowRightIcon/ArrowRightIco";
 import MusicItem from "../MusicItem/MusicItem";
 import { motion } from "framer-motion";
 
-interface MusicCarouselProps {
+interface MusicDisplayProps {
   data: ItemType[];
   type?: string;
   title: string;
 }
 
-export default function MusicCarousel({
-  data,
-  type,
-  title,
-}: MusicCarouselProps) {
+export default function MusicDisplay({ data, type, title }: MusicDisplayProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -48,11 +42,18 @@ export default function MusicCarousel({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h2 className="text-white font-bold mb-2 text-xl pl-3">{title}</h2>
+      <span className="flex items-center justify-between w- font-bold">
+        <h2 className="text-white  mb-2 text-xl pl-3 hover:underline cursor-pointer">
+          {title}
+        </h2>
+        <p className="text-sp-light-gray-2 text-xs cursor-pointer">
+          Mostrar Todo
+        </p>
+      </span>
 
       <motion.span
         onClick={prev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-sp-dark-gray p-1 rounded-full z-10 cursor-pointer"
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-sp-dark-gray p-1 rounded-full z-10 cursor-pointer mx-3"
         animate={{
           x: isHovered ? 0 : -20,
           opacity: currentIndex > 0 && isHovered ? 1 : 0,
@@ -65,7 +66,7 @@ export default function MusicCarousel({
 
       <motion.span
         onClick={next}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-sp-dark-gray p-1 rounded-full z-10 cursor-pointer"
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-sp-dark-gray p-1 rounded-full z-10 cursor-pointer mx-2 "
         animate={{
           x: isHovered ? 0 : 20,
           opacity:
