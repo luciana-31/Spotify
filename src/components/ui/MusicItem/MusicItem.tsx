@@ -34,7 +34,9 @@ export default function MusicItem({
         <img src={src} alt={title} className="h-full w-full object-cover" />
       </div>
 
-      <h3 className="text-white hover:underline cursor-pointer">{title}</h3>
+      <h3 className="text-white hover:underline cursor-pointer font-bold">
+        {title}
+      </h3>
       <span className="flex items-center gap-x-2 ">
         {explicit && (
           <span className="bg-sp-light-gray-2 px-1 rounded-xs text-xxs text-sp-dark-gray">
