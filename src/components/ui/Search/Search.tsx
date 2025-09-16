@@ -1,7 +1,6 @@
 import SearchIcon from "../../../assets/svg/SearchIcon/SearchIcon";
 import ExploreIcon from "../../../assets/svg/ExploreIcon/ExploreIcon";
 import clsx from "clsx";
-// import { useState } from "react";
 
 interface SearchProps {
   placeholder: string;

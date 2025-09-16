@@ -8,14 +8,12 @@ interface LinkListProps {
 export default function LinkList({ type, title, links }: LinkListProps) {
   return (
     <div className="flex flex-col gap-y-1 text-xs sm:text-[10px] ">
-      {/* Título */}
       {title && (
         <span className="text-white font-semibold text-sm sm:text-[10px] md:text-sm">
           {title}
         </span>
       )}
 
-      {/* Links */}
       <ul
         className={`flex flex-col gap-y-2 text-sp-light-gray-2 ${
           type === "aside"
